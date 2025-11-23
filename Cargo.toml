@@ -75,10 +75,12 @@ tokio = { workspace = true, features = ["macros", "rt", "sync", "time"] }
 tracing = { version = "0.1", optional = true }
 
 [dev-dependencies]
+clap = { version = "4.5", features = ["derive"] }
 criterion = { version = "0.7", features = ["async_tokio"] }
 kameo_actors = { path = "actors" }
 libp2p = { version = "0.56.0", features = ["serde"] }
 metrics-exporter-prometheus = "0.17.2"
+rand = "0.8"
 tokio = { version = "1", features = [
   "macros",
   "rt",
@@ -97,6 +99,14 @@ required-features = ["remote"]
 
 [[example]]
 name = "custom_swarm"
+required-features = ["remote"]
+
+[[example]]
+name = "intranet_server"
+required-features = ["remote"]
+
+[[example]]
+name = "intranet_client"
 required-features = ["remote"]
 
 [[example]]
